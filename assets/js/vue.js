@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
         data: {
             viewPage: 'home',
             slidesData: [
-                '../assets/images/s1.png',
+                'assets/s1.png',
                 'https://thumb.ac-illust.com/30/306837819e76342840641fd1d53fd2f9_t.jpeg',
-                '../assets/images/s1.png'
+                'assets/s1.png'
             ],
             currentIndex: 0,
             is_viewed: false
@@ -37,12 +37,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else {
                     alert('請觀看完影片');
                 }
-            }
-        },
-        watch: {
-            viewPage(newPage) {
-                if (newPage === 'arpage' || newPage === 'arpage02') {
-                    console.log('AR scripts should be loaded here.');
+            },
+            initAR() {
+                if (this.viewPage === 'arpage') {
                     AFRAME.registerComponent('image-tracker-1', {
                         init: function () {
                             console.log("image-tracker-1 init");
@@ -50,14 +47,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         tick: function() {
                             if (this.el.object3D.visible == true) {
                                 console.log("image-tracker-1 detected");
-                                arbox.style.display = "block";
-                                step = 2;
                                 app.viewPage = 'poster';
                                 alert("成功辨識封面1");
                             }
                         }
                     });
-
+                } 
+                if (this.viewPage === 'arpage02') {
                     AFRAME.registerComponent('image-tracker-2', {
                         init: function () {
                             console.log("image-tracker-2 init");
@@ -65,15 +61,18 @@ document.addEventListener('DOMContentLoaded', function () {
                         tick: function() {
                             if (this.el.object3D.visible == true) {
                                 console.log("image-tracker-2 detected");
-                                if (step != 2 && !is_notified) {
-                                    is_notified = true;
-                                    alert("請先掃描封面辨識點");
-                                } else {
-                                    alert("成功辨識封面2");
-                                }
+                                app.viewPage = 'home';
+                                alert("成功辨識封面2");
                             }
                         }
                     });
+                }
+            }
+        },
+        watch: {
+            viewPage(newPage) {
+                if (newPage === 'arpage' || newPage === 'arpage02') {
+                    this.initAR();
                 }
             }
         },
