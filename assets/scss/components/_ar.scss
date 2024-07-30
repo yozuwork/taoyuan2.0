@@ -1,9 +1,9 @@
 
 .ar-img-bg{
     position: absolute;
-    @include size(100%, 100%);
+    @include size(100vw, 100vh);
 }
-canvas{
+video {
     width: 100vw;
     height: 100vh;
     position: absolute;
@@ -12,7 +12,6 @@ canvas{
     object-fit: cover; /* 确保视频覆盖整个屏幕 */
     z-index: 2;
     display: block;
-    background-color: none !important;
 }
 
 

@@ -6,22 +6,6 @@ var step = 0;
 var is_notified = false;
 
 document.addEventListener('DOMContentLoaded', function () {
-    function loadScript(src) {
-        return new Promise((resolve, reject) => {
-            const script = document.createElement('script');
-            script.src = src;
-            script.onload = () => {
-                console.log(`Script loaded: ${src}`);
-                resolve();
-            };
-            script.onerror = () => {
-                console.error(`Failed to load script: ${src}`);
-                reject();
-            };
-            document.head.appendChild(script);
-        });
-    }
-
     app = new Vue({
         el: '#app',
         data: {
@@ -58,44 +42,37 @@ document.addEventListener('DOMContentLoaded', function () {
         watch: {
             viewPage(newPage) {
                 if (newPage === 'arpage' || newPage === 'arpage02') {
-                    Promise.all([
-                        loadScript('https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js'),
-                        loadScript('https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js')
-                    ]).then(() => {
-                        console.log('AR scripts loaded.');
-                        AFRAME.registerComponent('image-tracker-1', {
-                            init: function () {
-                                console.log("image-tracker-1 init");
-                            },
-                            tick: function() {
-                                if (this.el.object3D.visible == true) {
-                                    console.log("image-tracker-1 detected");
-                                    arbox.style.display = "block";
-                                    step = 2;
-                                    app.viewPage = 'poster';
-                                    alert("成功辨識封面1");
-                                }
+                    console.log('AR scripts should be loaded here.');
+                    AFRAME.registerComponent('image-tracker-1', {
+                        init: function () {
+                            console.log("image-tracker-1 init");
+                        },
+                        tick: function() {
+                            if (this.el.object3D.visible == true) {
+                                console.log("image-tracker-1 detected");
+                                arbox.style.display = "block";
+                                step = 2;
+                                app.viewPage = 'poster';
+                                alert("成功辨識封面1");
                             }
-                        });
+                        }
+                    });
 
-                        AFRAME.registerComponent('image-tracker-2', {
-                            init: function () {
-                                console.log("image-tracker-2 init");
-                            },
-                            tick: function() {
-                                if (this.el.object3D.visible == true) {
-                                    console.log("image-tracker-2 detected");
-                                    if (step != 2 && !is_notified) {
-                                        is_notified = true;
-                                        alert("請先掃描封面辨識點");
-                                    } else {
-                                        alert("成功辨識封面2");
-                                    }
+                    AFRAME.registerComponent('image-tracker-2', {
+                        init: function () {
+                            console.log("image-tracker-2 init");
+                        },
+                        tick: function() {
+                            if (this.el.object3D.visible == true) {
+                                console.log("image-tracker-2 detected");
+                                if (step != 2 && !is_notified) {
+                                    is_notified = true;
+                                    alert("請先掃描封面辨識點");
+                                } else {
+                                    alert("成功辨識封面2");
                                 }
                             }
-                        });
-                    }).catch(err => {
-                        console.error('Failed to load AR scripts:', err);
+                        }
                     });
                 }
             }
