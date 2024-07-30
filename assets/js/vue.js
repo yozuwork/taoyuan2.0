@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     app = new Vue({
         el: '#app',
         data: {
-            viewPage: 'video-view',
+            viewPage: 'home',
             slidesData: [
                 '../assets/images/s1.png',
                 'https://thumb.ac-illust.com/30/306837819e76342840641fd1d53fd2f9_t.jpeg',
