@@ -1,0 +1,75 @@
+.font-title-1 {
+    font-size: calc(2.075rem + 9.9vw);
+    font-weight: 900;
+    line-height: 1.2;
+  }
+  @media (min-width: 1200px) {
+    .font-title-1 {
+      font-size: 9.5rem;
+    }
+}
+
+.font-title-2 {
+    font-size: calc(1.725rem + 5.7vw);
+    font-weight: 900;
+    line-height: 1.2;
+  }
+  @media (min-width: 1200px) {
+    .font-title-2 {
+      font-size: 6rem;
+    }
+}
+.font-title-3 {
+    font-size: calc(1.375rem + 1.5vw);
+    font-weight: 900;
+    line-height: 1.2;
+  }
+  @media (min-width: 1200px) {
+    .font-title-3  {
+      font-size: 2.5rem;
+    }
+}
+.font-title-4b {
+    font-size: calc(1.275rem + 0.3vw);
+    font-weight: 700;
+  }
+  @media (min-width: 1200px) {
+    .font-title-4b {
+      font-size: 1.5rem;
+    }
+  }
+.font-title-4m {
+    font-size: calc(1.275rem + 0.3vw);
+    font-weight: 300;
+  }
+  @media (min-width: 1200px) {
+    .font-title-4m  {
+      font-size: 1.5rem;
+    }
+}
+.font-small{
+    font-size: 0.875rem;
+    font-weight: 300;
+}
+.font-icon{
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+.font-64 {
+    font-size: calc(1.525rem + 3.3vw);
+    font-weight: 900;
+    line-height: 1.2;
+  }
+  @media (min-width: 1200px) {
+    .font-64 {
+      font-size: 4rem;
+    }
+  }
+.noto-sans-700 {
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }

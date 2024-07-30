@@ -1,0 +1,37 @@
+
+.ar-img-bg{
+    position: absolute;
+    @include size(100%, 100%);
+}
+canvas{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover; /* 确保视频覆盖整个屏幕 */
+    z-index: 2;
+    display: block;
+    background-color: none !important;
+}
+
+
+
+.arbox, a-scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+.ar-img{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    top:6%;
+    z-index: 9999999 !important;
+}
+.ar-img img{
+    width: 100%;
+}

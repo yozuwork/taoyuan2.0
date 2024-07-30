@@ -1,0 +1,77 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  
+}
+a{
+  display: block ;
+}
+html,body{
+  overflow-x: hidden;
+  width: 100dvw !important;
+  height: 100dvh !important;
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+} 
+
+
+
+body{
+ 
+  background: linear-gradient(180deg, #FFFFFF 0%, #A4D5EE 50%);
+  background-size: cover;
+  line-height: 31px ;
+  font-family: 'Noto Sans' ,'Noto Sans TC', sans-serif !important;
+  font-size: 1rem;
+  position: relative;
+  padding-bottom: env(safe-area-inset-bottom) !important;
+
+
+}
+
+
+footer{
+  background-image: url('../images/footer.svg');
+  background-size: cover;
+  width: 100vw;
+  height: 90px;
+  position: absolute;
+  bottom: 0;
+
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+a {
+  display: block;
+  text-decoration: none;
+}
+
+section{
+    position: relative;
+}
+button{
+  background: none ;
+  cursor: pointer;
+}
+
+
+textarea {
+  text-align: left;
+}
+
+
