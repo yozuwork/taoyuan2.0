@@ -52,6 +52,7 @@
 </div>
 <!-- AR -->
 <a-scene
+v-if="viewPage == 'arpage'"
 class="arbox"
 vr-mode-ui="enabled: false;"
 renderer="logarithmicDepthBuffer: true;"
@@ -86,7 +87,7 @@ arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
         position="50 150 0">
     </a-entity>
 </a-nft>
-<a-entity camera></a-entity>
+<a-entity v-if="viewPage == 'arpage'" camera></a-entity>
 </a-scene>        <div class="content poster d-flex justify-content-center flex-column " v-if="viewPage === 'poster'">
    <div> <h1 class="poster-h1 pt-6 h1 pt-lg-4 h2 w-100 text-center text-light ">- 稅務知識圖卡 -</h1></div>
     <div class="slides-container">
@@ -124,6 +125,7 @@ arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
 </div>
 <!-- AR -->
 <a-scene
+v-if="viewPage == 'arpage02'"
 class="arbox"
 vr-mode-ui="enabled: false;"
 renderer="logarithmicDepthBuffer: true;"
@@ -158,7 +160,7 @@ arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
         position="50 150 0">
     </a-entity>
 </a-nft>
-<a-entity camera></a-entity>
+<a-entity camera v-if="viewPage == 'arpage02'"></a-entity>
 </a-scene>        <div class="content poster d-flex flex-column align-items-center pt-5" v-if="viewPage === 'video-view'">
     <div><h1 class="h2 text-center text-light py-0 py-sm-4 ">- 稅務知識影片 -</h1></div>
     <div class="iframe-container">
