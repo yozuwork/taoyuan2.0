@@ -61,28 +61,28 @@
     arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
     <a-nft
         type='nft'
-        url='https://yozuwork.github.io/WEBARImageTracking2.0/assets/tracking_target/marker'
+        url='https://yozuwork.github.io/taoyuan2.0/assets/marker'
         smooth='true'
         smoothCount='10'
         smoothTolerance='0.01'
         smoothThreshold='5'
         image-tracker-1>
         <a-entity
-            gltf-model='https://yozuwork.github.io/WEBARImageTracking2.0/assets/scene.gltf'
+            gltf-model='https://yozuwork.github.io/taoyuan2.0/assets/scene.gltf'
             scale="5 5 5"
             position="50 150 0">
         </a-entity>
     </a-nft>
     <a-nft
         type='nft'
-        url='https://yozuwork.github.io/WEBARImageTracking2.0/assets/tracking_target/marker-2'
+        url='https://yozuwork.github.io/taoyuan2.0/assets/marker-2'
         smooth='true'
         smoothCount='10'
         smoothTolerance='0.01'
         smoothThreshold='5'
         image-tracker-2>
         <a-entity
-            gltf-model='https://yozuwork.github.io/WEBARImageTracking2.0/assets/scene.gltf'
+            gltf-model='https://yozuwork.github.io/taoyuan2.0/assets/scene.gltf'
             scale="5 5 5"
             position="50 150 0">
         </a-entity>
@@ -125,7 +125,7 @@
 </div>
 <!-- AR -->
 <a-scene
-    v-if="viewPage == 'arpage02'" 
+    v-if="viewPage == 'arpage'" 
     class="arbox"
     vr-mode-ui="enabled: false;"
     renderer="logarithmicDepthBuffer: true;"
@@ -134,33 +134,33 @@
     arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
     <a-nft
         type='nft'
-        url='https://yozuwork.github.io/WEBARImageTracking2.0/assets/tracking_target/marker'
+        url='https://yozuwork.github.io/taoyuan2.0/assets/marker'
         smooth='true'
         smoothCount='10'
         smoothTolerance='0.01'
         smoothThreshold='5'
         image-tracker-1>
         <a-entity
-            gltf-model='https://yozuwork.github.io/WEBARImageTracking2.0/assets/scene.gltf'
+            gltf-model='https://yozuwork.github.io/taoyuan2.0/assets/scene.gltf'
             scale="5 5 5"
             position="50 150 0">
         </a-entity>
     </a-nft>
     <a-nft
         type='nft'
-        url='https://yozuwork.github.io/WEBARImageTracking2.0/assets/tracking_target/marker-2'
+        url='https://yozuwork.github.io/taoyuan2.0/assets/marker-2'
         smooth='true'
         smoothCount='10'
         smoothTolerance='0.01'
         smoothThreshold='5'
         image-tracker-2>
         <a-entity
-            gltf-model='https://yozuwork.github.io/WEBARImageTracking2.0/assets/scene.gltf'
+            gltf-model='https://yozuwork.github.io/taoyuan2.0/assets/scene.gltf'
             scale="5 5 5"
             position="50 150 0">
         </a-entity>
     </a-nft>
-    <a-entity v-if="viewPage == 'arpage02'" camera></a-entity>
+    <a-entity v-if="viewPage == 'arpage'" camera></a-entity>
 </a-scene>        <div class="content poster d-flex flex-column align-items-center pt-5" v-if="viewPage === 'video-view'">
     <div><h1 class="h2 text-center text-light py-0 py-sm-4 ">- 稅務知識影片 -</h1></div>
     <div class="iframe-container">
