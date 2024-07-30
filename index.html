@@ -52,42 +52,41 @@
 </div>
 <!-- AR -->
 <a-scene
-    v-if="viewPage == 'arpage'" 
-    class="arbox"
-    vr-mode-ui="enabled: false;"
-    renderer="logarithmicDepthBuffer: true;"
-    embedded
-    device-orientation-permission-ui="enabled: false"
-    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
-    <a-nft
-        type='nft'
-        url='https://yozuwork.github.io/taoyuan2.0/assets/marker'
-        smooth='true'
-        smoothCount='10'
-        smoothTolerance='0.01'
-        smoothThreshold='5'
-        image-tracker-1>
-        <a-entity
-            gltf-model='https://yozuwork.github.io/taoyuan2.0/assets/scene.gltf'
-            scale="5 5 5"
-            position="50 150 0">
-        </a-entity>
-    </a-nft>
-    <a-nft
-        type='nft'
-        url='https://yozuwork.github.io/taoyuan2.0/assets/marker-2'
-        smooth='true'
-        smoothCount='10'
-        smoothTolerance='0.01'
-        smoothThreshold='5'
-        image-tracker-2>
-        <a-entity
-            gltf-model='https://yozuwork.github.io/taoyuan2.0/assets/scene.gltf'
-            scale="5 5 5"
-            position="50 150 0">
-        </a-entity>
-    </a-nft>
-    <a-entity v-if="viewPage == 'arpage'" camera></a-entity>
+class="arbox"
+vr-mode-ui="enabled: false;"
+renderer="logarithmicDepthBuffer: true;"
+embedded
+device-orientation-permission-ui="enabled: false"
+arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
+<a-nft
+    type='nft'
+    url='https://yozuwork.github.io/WEBARImageTracking2.0/assets/tracking_target/marker'
+    smooth='true'
+    smoothCount='10'
+    smoothTolerance='0.01'
+    smoothThreshold='5'
+    image-tracker-1>
+    <a-entity
+        gltf-model='https://yozuwork.github.io/WEBARImageTracking2.0/assets/scene.gltf'
+        scale="5 5 5"
+        position="50 150 0">
+    </a-entity>
+</a-nft>
+<a-nft
+    type='nft'
+    url='https://yozuwork.github.io/WEBARImageTracking2.0/assets/tracking_target/home'
+    smooth='true'
+    smoothCount='10'
+    smoothTolerance='0.01'
+    smoothThreshold='5'
+    image-tracker-2>
+    <a-entity
+        gltf-model='https://yozuwork.github.io/WEBARImageTracking2.0/assets/scene.gltf'
+        scale="5 5 5"
+        position="50 150 0">
+    </a-entity>
+</a-nft>
+<a-entity camera></a-entity>
 </a-scene>        <div class="content poster d-flex justify-content-center flex-column " v-if="viewPage === 'poster'">
    <div> <h1 class="poster-h1 pt-6 h1 pt-lg-4 h2 w-100 text-center text-light ">- 稅務知識圖卡 -</h1></div>
     <div class="slides-container">
