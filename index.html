@@ -7,8 +7,8 @@
     <title>index</title>
    
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
-    <script type="module" crossorigin src="/taoyuan2.0/assets/index-7a0fd1b5.js"></script>
-    <link rel="stylesheet" href="/taoyuan2.0/assets/index-81e90783.css">
+    <script type="module" crossorigin src="/taoyuan2.0/assets/index-2d468b9b.js"></script>
+    <link rel="stylesheet" href="/taoyuan2.0/assets/index-651f532f.css">
   </head>
   <body>
     <div v-if="viewPage == 'arpage'">
@@ -352,9 +352,9 @@ arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
 </div>
 
         <div class="content poster d-flex flex-column align-items-center" v-if="viewPage === 'results'">
-    <div class="mt-4"><img src="/taoyuan2.0/assets/home-title-2e1637b1.png" alt=""></div>
+    <div class="mt-2"><img src="/taoyuan2.0/assets/home-title-2e1637b1.png" alt=""></div>
     <div class="results-text mt-3 pt-2 pb-3 px-3 text-light mb-3 d-flex flex-column align-items-center">
-        <p class="h3 py-3">恭喜您完成答題</p>
+        <p class="fs-5">恭喜您完成答題</p>
         <p>請填寫抽獎人聯絡手機末三碼</p>
         <input id="phoneLastThree" class="py-3 px-5 text-center" type="text" value="123">
     </div>
@@ -369,6 +369,9 @@ arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
         <button @click="changeViewPage('fina-page')" class="btn btn-primary px-7 py-3 mb-4" type="button">產出抽獎流水號</button>
     </div>
 </div>
+
+
+
 
 
         
