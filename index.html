@@ -7,15 +7,11 @@
     <title>index</title>
    
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
-    <script type="module" crossorigin src="/taoyuan2.0/assets/index-f8812293.js"></script>
+    <script type="module" crossorigin src="/taoyuan2.0/assets/index-65f532dc.js"></script>
     <link rel="stylesheet" href="/taoyuan2.0/assets/index-105b5e96.css">
   </head>
   <body>
     <div v-if="viewPage == 'arpage'">
-      <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-      <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    </div>
-    <div v-if="viewPage == 'arpage02'">
       <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
       <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     </div>
@@ -59,7 +55,7 @@
 </div>
 <!-- AR -->
 <a-scene
-v-if="viewPage == 'arpage'"
+
 class="arbox"
 vr-mode-ui="enabled: false;"
 renderer="logarithmicDepthBuffer: true;"
@@ -94,7 +90,7 @@ arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
         position="50 150 0">
     </a-entity>
 </a-nft>
-<a-entity v-if="viewPage == 'arpage'" camera></a-entity>
+<a-entity  camera></a-entity>
 </a-scene>
 
 
