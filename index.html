@@ -7,7 +7,7 @@
     <title>index</title>
    
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
-    <script type="module" crossorigin src="/taoyuan2.0/assets/index-2f57b60b.js"></script>
+    <script type="module" crossorigin src="/taoyuan2.0/assets/index-f8812293.js"></script>
     <link rel="stylesheet" href="/taoyuan2.0/assets/index-105b5e96.css">
   </head>
   <body>
@@ -80,6 +80,20 @@ arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
         position="50 150 0">
     </a-entity>
 </a-nft>
+<a-nft
+    type='nft'
+    url='https://yozuwork.github.io/WEBARImageTracking2.0/assets/tracking_target/home'
+    smooth='true'
+    smoothCount='10'
+    smoothTolerance='0.01'
+    smoothThreshold='5'
+    image-tracker-2>
+    <a-entity
+        gltf-model='https://yozuwork.github.io/WEBARImageTracking2.0/assets/scene.gltf'
+        scale="5 5 5"
+        position="50 150 0">
+    </a-entity>
+</a-nft>
 <a-entity v-if="viewPage == 'arpage'" camera></a-entity>
 </a-scene>
 
@@ -107,7 +121,7 @@ arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
     </div>
     <div class="d-flex justify-content-center  ">
         <button @click="changeViewPage('arpage')" class="btn btn-sm btn-secondary py-3 mb-5 me-3 d-flex justify-content-center align-items-center" type="button">返回</button>
-        <button @click="changeViewPage('arpage02')" class="btn btn-sm btn-primary py-3 mb-5 d-flex justify-content-center align-items-center" type="button">開始答題</button>
+        <button @click="changeViewPage('arpage')" class="btn btn-sm btn-primary py-3 mb-5 d-flex justify-content-center align-items-center" type="button">開始答題</button>
     </div>
 </div>
         
