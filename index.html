@@ -55,7 +55,7 @@
 </div>
 <!-- AR -->
 <a-scene
-
+v-if="viewPage == 'arpage'"
 class="arbox"
 vr-mode-ui="enabled: false;"
 renderer="logarithmicDepthBuffer: true;"
@@ -90,7 +90,7 @@ arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
         position="50 150 0">
     </a-entity>
 </a-nft>
-<a-entity  camera></a-entity>
+<a-entity v-if="viewPage == 'arpage'" camera></a-entity>
 </a-scene>
 
 
