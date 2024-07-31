@@ -7,7 +7,7 @@
     <title>index</title>
    
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
-    <script type="module" crossorigin src="/taoyuan2.0/assets/index-ceef73bb.js"></script>
+    <script type="module" crossorigin src="/taoyuan2.0/assets/index-e0c4ae81.js"></script>
     <link rel="stylesheet" href="/taoyuan2.0/assets/index-fd589c91.css">
   </head>
   <body>
@@ -58,12 +58,14 @@
     </div>
 </div>
 <!-- AR -->
-<a-scene v-if="viewPage == 'arpage'"
+<a-scene
+v-if="viewPage == 'arpage'"
+class="arbox"
 vr-mode-ui="enabled: false;"
 renderer="logarithmicDepthBuffer: true;"
 embedded
 device-orientation-permission-ui="enabled: false"
-arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
 <a-nft
     type='nft'
     url='https://yozuwork.github.io/WEBARImageTracking2.0/assets/tracking_target/marker'
@@ -72,28 +74,13 @@ arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
     smoothTolerance='0.01'
     smoothThreshold='5'
     image-tracker-1>
-    <a-text value="hello world" color="red" position="0 0 0" scale="350 350 350" side="double"></a-text>
     <a-entity
         gltf-model='https://yozuwork.github.io/WEBARImageTracking2.0/assets/scene.gltf'
         scale="5 5 5"
         position="50 150 0">
     </a-entity>
 </a-nft>
-<a-nft
-    type='nft'
-    url='https://yozuwork.github.io/WEBARImageTracking2.0/assets/tracking_target/home'
-    smooth='true'
-    smoothCount='10'
-    smoothTolerance='0.01'
-    smoothThreshold='5'
-    image-tracker-2>
-    <a-entity
-        gltf-model='https://yozuwork.github.io/WEBARImageTracking2.0/assets/scene.gltf'
-        scale="5 5 5"
-        position="50 150 0">
-    </a-entity>
-</a-nft>
-<a-entity camera></a-entity>
+<a-entity v-if="viewPage == 'arpage'" camera></a-entity>
 </a-scene>
 
 
@@ -160,21 +147,21 @@ arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
 </a-nft>
 <a-entity camera v-if="viewPage == 'arpage02'"></a-entity>
 </a-scene>        <div class="content poster d-flex flex-column align-items-center pt-5" v-if="viewPage === 'video-view'">
-    <div><h1 class="h2 text-center text-light py-0 py-sm-4 ">- 稅務知識影片 -</h1></div>
+    <div class="pb-3"><h1 class="h2 text-center text-light py-0 py-sm-4 ">- 稅務知識影片 -</h1></div>
     <div class="iframe-container">
         <iframe id="youtubeVideo1" width="560" height="170" src="https://www.youtube.com/embed/emtg3JN4x_o?enablejsapi=1" 
                 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
         </iframe>
     </div>
-    <div><p class="text-light text-shadow">113 新三隻小豬 稅務篇</p></div>
+    <div class="pb-1"><p class="text-light text-shadow">113 新三隻小豬 稅務篇</p></div>
     <div class="iframe-container">
         <iframe id="youtubeVideo2" width="560" height="170" src="https://www.youtube.com/embed/PdGfWuaT_hA?enablejsapi=1" 
                 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
         </iframe>
     </div>
-    <div><p class="text-light text-shadow">113年房屋稅新制重點</p></div>
+    <div class="pb-1"><p class="text-light text-shadow">113年房屋稅新制重點</p></div>
     <div class="mt-auto d-flex justify-content-center"> 
         <button @click="changeViewPage('arpage02')" class="btn btn-sm btn-secondary px-5 py-3 mb-5 me-3 d-flex justify-content-center align-items-center" type="button">返回</button>
         <button @click="nextPage" id="nextPage" class="btn btn-sm btn-primary px-5 py-3 mb-5 d-flex justify-content-center align-items-center" type="button">開始答題</button>
@@ -369,7 +356,7 @@ arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
 </div>
 
         <div class="content poster d-flex flex-column align-items-center" v-if="viewPage === 'results'">
-    <div class="mt-4"><img src="assets/images/home-title.png" alt=""></div>
+    <div class="mt-4"><img src="/taoyuan2.0/assets/home-title-2e1637b1.png" alt=""></div>
     <div class="results-text mt-3 pt-2 pb-3 px-3 text-light mb-3 d-flex flex-column align-items-center">
         <p class="h3 py-3">恭喜您完成答題</p>
         <p>請填寫抽獎人聯絡手機末三碼</p>
