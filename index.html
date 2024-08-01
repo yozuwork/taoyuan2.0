@@ -5,17 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>index</title>
-    <script id="aframe-script" src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
-      <script id="arjs-script" src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+   
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
     <script type="module" crossorigin src="/taoyuan2.0/assets/index-6e35a908.js"></script>
     <link rel="stylesheet" href="/taoyuan2.0/assets/index-4b9e502d.css">
   </head>
   <body>
-    <!-- 背景音乐 -->
-    <audio id="background-music" src="../assets/bg.mp3" loop >
-      Your browser does not support the audio element.
-    </audio>
+    <div v-if="viewPage == 'arpage'">
+      <script id="aframe-script" src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+      <script id="arjs-script" src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    </div>
+   <!-- 背景音乐 -->
+   <audio id="background-music" src="../assets/bg.mp3" loop >
+    Your browser does not support the audio element.
+  </audio>
     <div class="wrap-content" id="app">
       <div class="d-none d-lg-block"><img src="/taoyuan2.0/assets/home-title-2e1637b1.png" alt=""></div>
         <div v-if="viewPage == 'home'" class="content home d-flex justify-content-end flex-column md-0 mb-md-5" >
