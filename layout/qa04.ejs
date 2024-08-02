@@ -1,0 +1,38 @@
+<div v-if="viewPage === 'qa04'">
+    
+    <div class="content poster d-flex justify-content-start flex-column align-items-center">
+        <div class="resultbox correct" style="z-index: 999;"> <img src="../assets/images/correct.png" alt=""></div>
+        <div class="resultbox mistake" style="z-index: 999;"> <img src="../assets/images/mistake.png" alt=""></div>
+        <div style="width: 95%;">
+            <div>
+                <h1 class="h3 text-center text-light py-4 mt-2">- 租稅互動問答 -</h1>
+            </div>
+            <div class="qa-text py-5 px-3 text-light mb-3">
+                Q4 惦惦吃三碗公飯的豬大哥 到底是用了什麼 APP 可以 24 小時兌領
+            </div>
+            <button class="ansbox w-100 text-light py-2 mb-3 text-start px-3" @click="checkAnswer(false,$event)">
+                A.發發發票怪獸
+            </button>
+            <button class="ansbox w-100 text-light py-2 mb-3 text-start px-3" @click="checkAnswer(false,$event)">
+                B.理財小幫手
+            </button>
+            <button class="ansbox w-100 text-light py-2 mb-3 text-start px-3" @click="checkAnswer(true,$event)">
+                C.統一發票兌獎
+            </button>
+            <button class="ansbox w-100 text-light py-2 mb-3 text-start px-3" @click="checkAnswer(false,$event)">
+                D.雲端發票王
+            </button>
+        </div>
+        <div class="mb-auto" style="width: 95%;">
+            <span class="fs-6 d-flex justify-content-center text-light">題目 4/5</span>
+            <div class="progress mt-2">
+                <div class="progress-bar progress-bar-active" role="progressbar" style="width: 20%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-bar-active-md bg-success" role="progressbar" style="width: 20%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-bar-active-md bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-bar-active-md bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+    </div>
+</div>
+

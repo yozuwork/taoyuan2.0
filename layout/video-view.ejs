@@ -1,19 +1,17 @@
-<div class="content poster d-flex flex-column align-items-center pt-5" v-if="viewPage === 'video-view'">
-    <div><h1 class="h2 text-center text-light py-0 py-sm-4 ">- 稅務知識影片 -</h1></div>
-    <div class="iframe-container">
-        <iframe id="youtubeVideo1" width="560" height="170" src="https://www.youtube.com/embed/emtg3JN4x_o?enablejsapi=1" 
+<div class="content poster d-flex flex-column align-items-center mt-5" v-if="viewPage === 'video-view'">
+    <div><h1 class="h2 text-center text-light py-0 py-sm-4">- 稅務知識影片 -</h1></div>
+    <div >
+        <iframe id="youtubeVideo1" src="https://www.youtube.com/embed/emtg3JN4x_o?enablejsapi=1" 
                 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-        </iframe>
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <p class="text-light text-shadow mt-2 text-center">113 新三隻小豬 稅務篇</p>
     </div>
-    <div><p class="text-light text-shadow">113 新三隻小豬 稅務篇</p></div>
-    <div class="iframe-container">
-        <iframe id="youtubeVideo2" width="560" height="170" src="https://www.youtube.com/embed/PdGfWuaT_hA?enablejsapi=1" 
+    <div >
+        <iframe id="youtubeVideo2" src="https://www.youtube.com/embed/PdGfWuaT_hA?enablejsapi=1" 
                 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-        </iframe>
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <p class="text-light text-shadow mt-2 text-center">113年房屋稅新制重點</p>
     </div>
-    <div><p class="text-light text-shadow">113年房屋稅新制重點</p></div>
     <div class="mt-auto d-flex justify-content-center"> 
         <button @click="changeViewPage('arpage02')" class="btn btn-sm btn-secondary px-5 py-3 mb-5 me-3 d-flex justify-content-center align-items-center" type="button">返回</button>
         <button @click="nextPage" id="nextPage" class="btn btn-sm btn-primary px-5 py-3 mb-5 d-flex justify-content-center align-items-center" type="button">開始答題</button>

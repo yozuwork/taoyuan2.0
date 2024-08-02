@@ -3,12 +3,14 @@ var step = 0;
 var is_notified = false;
 var arbox;
 
+document.getElementById('phoneLastThree').addEventListener('input', function (e) {
+    this.value = this.value.replace(/\D/g, '').slice(0, 3);
+});
+
 document.addEventListener('DOMContentLoaded', function () {
     arbox = document.createElement('div');
     arbox.id = 'arbox';
     document.body.appendChild(arbox);
-
-    // adjustVideoSize();
 
     app = new Vue({
         el: '#app',
@@ -33,14 +35,15 @@ document.addEventListener('DOMContentLoaded', function () {
             nextSlide() {
                 this.currentIndex = (this.currentIndex + 1) % this.slidesData.length;
             },
-            changeViewPage(page, play) {
+            changeViewPage(page,play) {
                 var music = document.getElementById('background-music');
                 if (play && music.paused) {
                     music.play();
                 }
+               
                 console.log(`Changing viewPage to ${page}`);
                 this.viewPage = page;
-                localStorage.setItem('viewPage', page);
+               
             },
             nextPage() {
                 console.log('nextPage called');
@@ -76,26 +79,22 @@ document.addEventListener('DOMContentLoaded', function () {
                         });
                         document.querySelectorAll('.ansbox').forEach(btn => {
                             btn.disabled = false;
+                            btn.classList.remove('ansbox-active');
                         });
                         if (vm.viewPage == 'qa01') {
                             vm.changeViewPage('qa02');
-                            window.scrollTo(0, 0);
                         } else if (vm.viewPage == 'qa02') {
                             vm.changeViewPage('qa03');
-                            window.scrollTo(0, 0);
                         } else if (vm.viewPage == 'qa03') {
                             vm.changeViewPage('qa04');
-                            window.scrollTo(0, 0);
                         } else if (vm.viewPage == 'qa04') {
                             vm.changeViewPage('qa05');
-                            window.scrollTo(0, 0);
                         } else if (vm.viewPage == 'qa05') {
                             vm.changeViewPage('results');
-                            window.scrollTo(0, 0);
                         }
 
-                        document.querySelectorAll('.ansbox').forEach(btn => {
-                            btn.classList.remove('ansbox-active');
+                        Vue.nextTick(() => {
+                            window.scrollTo(0, 0);
                         });
 
                         this.isDisabled = false;
@@ -147,6 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             },
             initAR() {
+                const vm =this;
                 if (this.viewPage === 'arpage' || this.viewPage === 'arpage02') {
                     AFRAME.registerComponent('image-tracker-1', {
                         init: function () {
@@ -157,7 +157,10 @@ document.addEventListener('DOMContentLoaded', function () {
                                 console.log("image-tracker-1 detected");
                                 step = 2;
                                 localStorage.setItem('viewPage', 'poster');
+                                vm.viewPage = 'poster';
+                                vm.viewPage('poster','keep');
                                 location.reload();
+                                
                             }
                         }
                     });
@@ -168,9 +171,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         tick: function () {
                             if (this.el.object3D.visible == true) {
-                                console.log("image-tracker-2 detected");
-                                localStorage.setItem('viewPage', 'video-view');
-                                location.reload();
+                                alert(['第二個物件']);
+                                // console.log("image-tracker-2 detected");
+                                // localStorage.setItem('viewPage', 'video-view');
+                                // vm.viewPage = 'video-view';
+                                // vm.viewPage('video-view','keep');
+                                // location.reload();
+                               
                             }
                         }
                     });
@@ -178,36 +185,56 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             updateOverflow() {
                 if (this.viewPage === 'arpage' || this.viewPage === 'arpage02') {
-                    document.documentElement.style.overflow = 'hidden';
-                    document.body.style.overflow = 'hidden';
+                    document.body.style.overflowY = 'hidden';
                 } else {
-                    document.documentElement.style.overflow = '';
-                    document.body.style.overflow = '';
+                    document.body.style.overflowY = 'auto';
                 }
             }
         },
         watch: {
-            viewPage(newPage) {
+            viewPage(newPage,status) {
+                if(status != 'keep'){
+                    localStorage.setItem('viewPage', 'home');
+                }
+               
                 var music = document.getElementById('background-music');
-                if(this.viewPage !== 'home') {
+               
+                if (this.viewPage !== 'home') {
                     music.play();
+                }else{
+                    music.pause();
                 }
                 console.log(`viewPage changed to ${newPage}`);
-                window.scrollTo(0, 0);
+                Vue.nextTick(() => {
+                    window.scrollTo(0, 0);
+                });
                 this.updateOverflow();
+                var scenes = document.querySelectorAll('a-scene');
+                var videos = document.querySelectorAll('video');
                 if (newPage === 'arpage' || newPage === 'arpage02') {
-                    this.loadARScripts();
-                    this.initAR();                  
+                    // this.loadARScripts();
+                    this.initAR();
+                    videos.forEach(video => {
+                        video.style.setProperty('display', 'block', 'important');
+                    });
+                    scenes.forEach(scene => {
+                        scene.style.setProperty('display', 'block', 'important');
+                    });
                 } else {
-                    this.unloadARScripts();
+                    // localStorage.setItem('viewPage', 'home');
+                    // this.unloadARScripts();
+                    videos.forEach(video => {
+                        video.style.setProperty('display', 'none', 'important');
+                    });
+                    scenes.forEach(scene => {
+                        scene.style.setProperty('display', 'none', 'important');
+                    });
                 }
+               
             }
         },
         mounted() {
-            const validPages = ['arpage', 'arpage02'];
-            if (!validPages.includes(this.viewPage)) {
-                localStorage.setItem('viewPage', 'home');
-            }
+            
 
             var iframe1 = document.getElementById('youtubeVideo1');
             var iframe2 = document.getElementById('youtubeVideo2');
@@ -287,24 +314,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     app.nextPage();
                 }
             }, false);
+
+           
         }
     });
 });
-
-// function adjustVideoSize() {
-//     var video = document.querySelector('a-scene').querySelector('video');
-//     if (video) {
-//         video.style.width = '100vw';
-//         video.style.height = '100vh';
-//         video.style.position = 'absolute';
-//         video.style.top = '0';
-//         video.style.left = '0';
-//         video.style.transform = 'none';
-//         video.style.zIndex = '99999';
-//         video.style.border = 'none';
-//         video.style.overflow = 'hidden';
-//         video.style.objectFit = 'cover';
-//     } else {
-//         setTimeout(adjustVideoSize, 500);
-//     }
-// }

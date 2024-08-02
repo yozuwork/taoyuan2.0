@@ -1,13 +1,14 @@
 .iframe-container {
     position: relative;
     width: 90%;
-    flex: 1;
+    margin-bottom: 20px; /* 添加底部边距，使段落更贴近视频 */
 }
 
 .iframe-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
+   
+}
 
+.iframe-container p {
+    margin-top: 10px; /* 调整段落的上边距，确保紧贴视频 */
 }

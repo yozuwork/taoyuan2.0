@@ -1,0 +1,34 @@
+<div v-if="viewPage === 'qa05'">
+    
+    <div class="content poster d-flex justify-content-start flex-column align-items-center">
+        <div class="resultbox correct" style="z-index: 999;"> <img src="../assets/images/correct.png" alt=""></div>
+        <div class="resultbox mistake" style="z-index: 999;"> <img src="../assets/images/mistake.png" alt=""></div>
+        <div style="width: 95%;">
+            <div>
+                <h1 class="h3 text-center text-light py-4 mt-2">- 租稅互動問答 -</h1>
+            </div>
+            <div class="qa-text py-5 px-3 text-light mb-3">
+                Q5 地方稅務局不會傳送非「gov.tw」的網址供民眾點擊繳稅，如接
+                獲地方稅務局通知稅金逾期未繳之可疑簡訊，可打 165 詐騙專線電話
+                求證?
+            </div>
+            <button class="ansbox w-100 text-light py-2 mb-3 text-start px-3" @click="checkAnswer(true,$event)">
+                A.對
+            </button>
+            <button class="ansbox w-100 text-light py-2 mb-3 text-start px-3" @click="checkAnswer(false,$event)">
+                B.不對
+            </button>
+        </div>
+        <div class="mb-auto" style="width: 95%;">
+            <span class="fs-6 d-flex justify-content-center text-light">題目 5/5</span>
+            <div class="progress mt-2">
+                <div class="progress-bar progress-bar-active" role="progressbar" style="width: 20%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-bar-active-md bg-success" role="progressbar" style="width: 20%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-bar-active-md bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-bar-active-md bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-bar-active-md bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -13,6 +13,8 @@ $color-contrast-dark: #000 !default;
 $color-contrast-light: #fff !default;
 $color-contrast-ratio: 4.5 !default;
 
+
+
 @import '../../node_modules/bootstrap/scss/functions';
 @import 'helpers/variables';
 @import '../../node_modules/bootstrap/scss/bootstrap';
@@ -20,7 +22,7 @@ $color-contrast-ratio: 4.5 !default;
 //helpers
 @import 'helpers/mixin';
 @import 'base/_base';
-
+@import 'base/_fonts';
 
 //utilities
 @import 'utilities/utilities';
@@ -40,21 +42,27 @@ $color-contrast-ratio: 4.5 !default;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw !important;
-    height: 100vh !important;
+    overflow-x: hidden;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
   }
 // 其他樣式
 .content {
     width: 375px;
     height: 680px;
-    background-size: cover !important;
+    background-size: cover ;
     background-position: 50% 50%; 
-    position: relative !important;
+    position: relative ;
+    overflow-x: hidden;
+    padding-bottom: 20px;
     @include small {
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        min-height: 100svh;
         z-index: 10000;
+        margin-left: 0 !important;
+        margin-top: 0 !important;
     }
+   
 }
 
 .cursor-pointer {
@@ -72,7 +80,7 @@ $color-contrast-ratio: 4.5 !default;
 
 .poster-page {
     @include small {
-       width: 100dvw;
-       height: 100
+       width: 100vw;
+       height: 100vh;
     }
 }

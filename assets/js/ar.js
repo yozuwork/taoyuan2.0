@@ -2,29 +2,29 @@ var step = 1;
 var is_notified = false;
 var arbox;
 
-document.addEventListener('DOMContentLoaded', function () {
-    arbox = document.querySelector('.arbox');
+// document.addEventListener('DOMContentLoaded', function () {
+//     arbox = document.querySelector('.arbox');
     
 
-    adjustVideoSize();
-});
+//     adjustVideoSize();
+// });
 
-function adjustVideoSize() {
-    var video = document.querySelector('a-scene').querySelector('video');
-    if (video) {
-        video.style.width = '100vw';
-        video.style.height = '100vh';
-        video.style.position = 'absolute';
-        video.style.top = '0';
-        video.style.left = '0';
-        video.style.transform = 'none';
-        video.style.zIndex = '99999';
-        video.style.border = 'none';
-        video.style.objectFit = 'cover'; // 确保视频覆盖整个屏幕
-    } else {
-        setTimeout(adjustVideoSize, 500);
-    }
-}
+// function adjustVideoSize() {
+//     var video = document.querySelector('a-scene').querySelector('video');
+//     if (video) {
+//         video.style.width = '100vw';
+//         video.style.height = '100vh';
+//         video.style.position = 'absolute';
+//         video.style.top = '0';
+//         video.style.left = '0';
+//         video.style.transform = 'none';
+//         video.style.zIndex = '99999';
+//         video.style.border = 'none';
+//         video.style.objectFit = 'cover'; // 确保视频覆盖整个屏幕
+//     } else {
+//         setTimeout(adjustVideoSize, 500);
+//     }
+// }
 
 
 

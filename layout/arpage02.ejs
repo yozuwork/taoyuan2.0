@@ -7,7 +7,7 @@
     <div class="ar-img-title  mb-auto pt-4" style="z-index: 3;"><img src="../assets/images/home-title.png" alt=""></div>
     <div class="ar-img-bg w-100 h-100"><img  class="w-100 h-100" src="../assets/images/1points01.png" alt=""></div>
     <div class="d-flex justify-content-center mt-auto pb-5" style="z-index:3">
-        <button @click="changeViewPage('poster')"  class="btn btn-secondary px-9 py-3 mb-5" type="button">返回</button>
+        <button @click="changeViewPage('poster','back')"  class="btn btn-secondary px-9 py-3 mb-5" type="button">返回</button>
     </div>
 </div>
 <!-- AR -->
@@ -33,5 +33,6 @@ arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
         position="50 150 0">
     </a-entity>
 </a-nft>
-<a-entity camera v-if="viewPage == 'arpage02'"></a-entity>
+
+<a-entity v-if="viewPage == 'arpage02'" camera></a-entity>
 </a-scene>

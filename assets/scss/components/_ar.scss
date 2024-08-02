@@ -1,27 +1,29 @@
 
 .ar-img-bg{
     position: absolute;
-    @include size(100vw, 100vh);
+    @include size(100%, 100%);
 }
 video {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover; /* 确保视频覆盖整个屏幕 */
-    z-index: 2;
-    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: auto !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    object-fit: cover !important;
+    // transform: none !important;
 }
 
 
 
 .arbox, a-scene {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
 }
 .ar-img{
     position: absolute;
