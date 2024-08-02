@@ -63,12 +63,13 @@
 <!-- AR -->
 
 <a-scene
+v-if="viewPage == 'arpage'"
+    class="arbox"
 embedded
 arjs="trackingMethod: best; sourceType: webcam; sourceWidth: 1280; sourceHeight: 720; debugUIEnabled: false;">
 
 <a-nft
-    v-if="viewPage == 'arpage'"
-    class="arbox"
+    
     type='nft'
     url='https://yozuwork.github.io/WEBARImageTracking2.0/assets/tracking_target/marker'
     smooth='true'
