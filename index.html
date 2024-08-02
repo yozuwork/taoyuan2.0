@@ -129,41 +129,38 @@ arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
 </div>
 <!-- AR -->
 <a-scene
-    v-if="viewPage == 'arpage02'"
-    class="arbox"
-    vr-mode-ui="enabled: false;"
-    renderer="logarithmicDepthBuffer: true;"
-    embedded
-    device-orientation-permission-ui="enabled: false"
-    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
-    
-    <a-nft
-        type='nft'
-        url='https://yozuwork.github.io/WEBARImageTracking2.0/assets/tracking_target/home'
-        smooth='true'
-        smoothCount='10'
-        smoothTolerance='0.01'
-        smoothThreshold='5'
-        image-tracker-2>
-        
-        <a-entity
-            gltf-model='https://yozuwork.github.io/WEBARImageTracking2.0/assets/scene.gltf'
-            scale="5 5 5"   
-            position="0 0 0">   
-        </a-entity>
-        
-    </a-nft>
+v-if="viewPage == 'arpage02'"
+class="arbox"
+vr-mode-ui="enabled: false;"
+renderer="logarithmicDepthBuffer: true;"
+embedded
+device-orientation-permission-ui="enabled: false"
+arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
+<a-nft
+    type='nft'
+    url='https://yozuwork.github.io/WEBARImageTracking2.0/assets/tracking_target/home'
+    smooth='true'
+    smoothCount='10'
+    smoothTolerance='0.01'
+    smoothThreshold='5'
+    image-tracker-2>
+    <a-entity
+        gltf-model='https://yozuwork.github.io/WEBARImageTracking2.0/assets/scene.gltf'
+        scale="5 5 5"
+        position="50 150 0">
+    </a-entity>
+</a-nft>
 
-    <a-entity camera look-controls></a-entity> <!-- 確保相機有look-controls -->
-</a-scene>        <div class="content poster d-flex flex-column align-items-center pt-5" v-if="viewPage === 'video-view'">
+<a-entity v-if="viewPage == 'arpage02'" camera></a-entity>
+</a-scene>        <div class="content poster d-flex flex-column align-items-center " v-if="viewPage === 'video-view'">
     <div><h1 class="h2 text-center text-light py-0 py-sm-4">- 稅務知識影片 -</h1></div>
-    <div class="iframe-container">
+    <div >
         <iframe id="youtubeVideo1" src="https://www.youtube.com/embed/emtg3JN4x_o?enablejsapi=1" 
                 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <p class="text-light text-shadow mt-2 text-center">113 新三隻小豬 稅務篇</p>
     </div>
-    <div class="iframe-container">
+    <div >
         <iframe id="youtubeVideo2" src="https://www.youtube.com/embed/PdGfWuaT_hA?enablejsapi=1" 
                 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
