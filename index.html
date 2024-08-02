@@ -62,32 +62,40 @@
 </div>
 <!-- AR -->
 
+
+
 <a-scene
-v-if="viewPage == 'arpage'"
+    v-if="viewPage == 'arpage'"
     class="arbox"
-embedded
-arjs="trackingMethod: best; sourceType: webcam; sourceWidth: 1280; sourceHeight: 720; debugUIEnabled: false;">
+    vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    device-orientation-permission-ui="enabled: false"
+    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
+    
+    <a-nft
+        type='nft'
+        url='https://yozuwork.github.io/WEBARImageTracking2.0/assets/tracking_target/marker'
+        smooth='true'
+        smoothCount='10'
+        smoothTolerance='0.01'
+        smoothThreshold='5'
+        image-tracker-1>
+        
+        <a-entity
+            gltf-model='https://yozuwork.github.io/WEBARImageTracking2.0/assets/scene.gltf'
+            scale="1 1 1"   
+            position="0 0 0">   
+        </a-entity>
+        
+    </a-nft>
 
-<a-nft
-    
-    type='nft'
-    url='https://yozuwork.github.io/WEBARImageTracking2.0/assets/tracking_target/marker'
-    smooth='true'
-    smoothCount='10'
-    smoothTolerance='0.01'
-    smoothThreshold='5'>
-    
-    <a-entity
-        gltf-model='https://yozuwork.github.io/WEBARImageTracking2.0/assets/scene.gltf'
-        scale="5 5 5"
-        position="0 0 0">
-    </a-entity>
-    
-</a-nft>
-
-<a-entity camera="fov: 80" look-controls></a-entity>
+    <a-entity camera look-controls></a-entity> <!-- 確保相機有look-controls -->
 </a-scene>
 
+
+
+<!----------d---->
 
 
         <div class="content poster d-flex justify-content-center flex-column " v-if="viewPage === 'poster'">
