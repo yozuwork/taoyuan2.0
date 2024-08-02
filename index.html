@@ -373,7 +373,8 @@
     <div class="results-text mt-3 pt-2 pb-3 px-3 text-light mb-3 d-flex flex-column align-items-center">
         <p class="fs-5">恭喜您完成答題</p>
         <p>請填寫抽獎人聯絡手機末三碼</p>
-        <input id="phoneLastThree" class="py-3 px-5 text-center" type="text" value="123">
+        <input id="phoneLastThree" class="py-3 px-5 text-center" type="tel" maxlength="3" pattern="\d{3}" title="請收入手機末三碼" oninput="this.value = this.value.replace(/\D/g, '').slice(0, 3)">
+
     </div>
     <div class="text-start text-shadow text-light" style="width: 95%; font-size: 14px;">
         填寫注意事項 <br>
