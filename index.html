@@ -70,6 +70,7 @@ device-orientation-permission-ui="enabled: false"
 arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
 
 <a-nft
+    v-if="!nowStep"
     type="nft"
     url="https://yozuwork.github.io/WEBARImageTracking2.0/assets/tracking_target/home"
     smooth="true"
@@ -85,6 +86,7 @@ arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
 </a-nft>
 
 <a-nft
+    v-if="nowStep"
     type="nft"
     url="https://yozuwork.github.io/WEBARImageTracking2.0/assets/tracking_target/home"
     smooth="true"
