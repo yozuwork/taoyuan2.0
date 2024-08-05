@@ -20,47 +20,7 @@
     <div class="wrap-content" id="app">
       <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
       <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-      <a-scene
-    v-if="viewPage === 'arpage' || viewPage === 'poster'"
-    class="arbox"
-    vr-mode-ui="enabled: false;"
-    renderer="logarithmicDepthBuffer: true;"
-    embedded
-    device-orientation-permission-ui="enabled: false"
-    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
-
-    <a-nft
-        type="nft"
-        url="https://yozuwork.github.io/WEBARImageTracking2.0/assets/tracking_target/marker1"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance="0.01"
-        smoothThreshold="5"
-        image-tracker-1>
-        <a-entity
-            gltf-model="https://yozuwork.github.io/WEBARImageTracking2.0/assets/scene.gltf"
-            scale="5 5 5"
-            position="50 150 0">
-        </a-entity>
-    </a-nft>
-
-    <a-nft
-        type="nft"
-        url="https://yozuwork.github.io/WEBARImageTracking2.0/assets/tracking_target/marker2"
-        smooth="true"
-        smoothCount="10"
-        smoothTolerance="0.01"
-        smoothThreshold="5"
-        image-tracker-2>
-        <a-entity
-            gltf-model="https://yozuwork.github.io/WEBARImageTracking2.0/assets/scene.gltf"
-            scale="5 5 5"
-            position="50 150 0">
-        </a-entity>
-    </a-nft>
-
-    <a-entity camera></a-entity>
-      </a-scene>
+     
       <div class="d-none d-lg-block"><img src="/taoyuan2.0/assets/images/home-title.png" alt=""></div>
         <div v-if="viewPage == 'home'" class="content home d-flex justify-content-end flex-column md-0 mb-md-5" >
     <div class="d-flex justify-content-center">
@@ -406,7 +366,47 @@
 
         <div class="d-none d-lg-block"><img src="/taoyuan2.0/assets/images/home-title.png" alt=""></div>
           <!-- AR -->
+<a-scene
+v-if="viewPage === 'arpage' || viewPage === 'poster' "
+class="arbox"
+vr-mode-ui="enabled: false;"
+renderer="logarithmicDepthBuffer: true;"
+embedded
+device-orientation-permission-ui="enabled: false"
+arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
 
+<a-nft
+    type="nft"
+    url="https://yozuwork.github.io/WEBARImageTracking2.0/assets/tracking_target/home"
+    smooth="true"
+    smoothCount="10"
+    smoothTolerance="0.01"
+    smoothThreshold="5"
+    image-tracker-1>
+    <a-entity
+        gltf-model="https://yozuwork.github.io/WEBARImageTracking2.0/assets/scene.gltf"
+        scale="5 5 5"
+        position="50 150 0">
+    </a-entity>
+</a-nft>
+
+<a-nft
+    type="nft"
+    url="https://yozuwork.github.io/WEBARImageTracking2.0/assets/tracking_target/home"
+    smooth="true"
+    smoothCount="10"
+    smoothTolerance="0.01"
+    smoothThreshold="5"
+    image-tracker-2>
+    <a-entity
+        gltf-model="https://yozuwork.github.io/WEBARImageTracking2.0/assets/scene.gltf"
+        scale="5 5 5"
+        position="50 150 0">
+    </a-entity>
+</a-nft>
+
+<a-entity camera></a-entity>
+</a-scene>
     </div>
     </div>
     <footer class="d-none d-sm-block"></footer>
