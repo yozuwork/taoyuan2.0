@@ -12,7 +12,7 @@
   </head>
   <body>
      <!-- 背景音乐 -->
-    <audio id="background-music" class="background-music"  src="assets/images/bg.mp3" autoplay  loop >
+    <audio id="background-music" class="background-music"  src="../assets/images/bg.mp3"  autoplay  loop >
       Your browser does not support the audio element.
     </audio>
     
@@ -87,7 +87,7 @@ arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
 
 <a-entity camera></a-entity>
 </a-scene>        <div class="content poster d-flex justify-content-center flex-column " v-if="viewPage === 'poster'">
-   <div> <h1 class="poster-h1 pt-6 h1 pt-lg-4 h2 w-100 text-center text-light ">- 稅務知識圖卡 -</h1></div>
+   <div> <h1 class="poster-h1 pt-6 h1 pt-lg-4 h2 w-100 text-center text-light ">- 稅務知識圖卡 - </h1></div>
     <div class="slides-container mb-3">
         <div id="slides" class="mb-3">
             <div v-for="(imageSrc, index) in slidesData" :key="index" class="slide" :class="{ active: index === currentIndex }">
@@ -97,7 +97,7 @@ arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;">
         <div class="buttons  d-flex justify-content-center">
             <button id="prevBtn" class="swiper-button" @click="prevSlide">&lt;</button>
             <span id="slideButtons">
-                <button v-for="(imageSrc, index) in slidesData" :key="index" class="swiper-button" :class="{ 'active-button': index === currentIndex }" @click="showSlide(index)">
+                <button v-for="(imageSrc, index) in slidesData" :key="index" class="swiper-button" :class="{ 'active-button': index <= currentIndex }" @click="showSlide(index)">
                     {{ index + 1 }}
                 </button>
             </span>
